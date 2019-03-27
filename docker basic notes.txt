@@ -1,0 +1,17 @@
+building a dockerfile command 
+-- docker build -t hello-system -f .\.Dockerfile
+
+running an application in a docker 
+-- docker run -it --rm --name my-hello-system hello-system 
+  -it -> run interactive 
+  --rm -> remove all previous change to the image and start a fresh 
+  --name -> give you running app a name 
+  -- hello-system the name of the tag previously assigned
+
+running a docker application with an expose port 
+docker run -it -port 8080:80 --name my-hello-system hello-system 
+
+sycing file system changes to container file system 
+select the drive in docker application 
+docker run -it -port 8080:80 -v //d/projects/hello-system/.:/usr/src/app --name my-hello-system hello-system 
+
